@@ -11,10 +11,6 @@ class $modify(GJBaseGameLayer) {
     }
 };
 
-bool isCube(PlayerObject* player) {
-    return !player->m_isShip && !player->m_isBall && !player->m_isBird && !player->m_isDart && !player->m_isRobot && !player->m_isSpider && !player->m_isSwing;
-}
-
 bool GamemodeLayer::setup(std::string const& value) {
     auto playLayer = GameManager::sharedState()->m_playLayer;
     auto player1 = static_cast<PlayerObjectExt*>(playLayer->m_player1);
