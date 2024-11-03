@@ -2,7 +2,7 @@
 #include "layer/GamemodeLayer.h"
 #include "Helper.hpp"
 
-#ifndef GEODE_IS_MACOS
+#ifdef GEODE_IS_WINDOWS
 
 #include <geode.custom-keybinds/include/Keybinds.hpp>
 #include <Geode/modify/UILayer.hpp>
