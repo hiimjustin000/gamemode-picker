@@ -1,7 +1,9 @@
 #include <Geode/Geode.hpp>
 #include "layer/GamemodeLayer.h"
 #include <Geode/modify/PauseLayer.hpp>
+#ifndef GEODE_IS_MACOS
 #include <geode.custom-keybinds/include/Keybinds.hpp>
+#endif
 using namespace geode::prelude;
 
 class $modify(CustomPauseLayer, PauseLayer) {
@@ -39,7 +41,7 @@ class $modify(CustomPauseLayer, PauseLayer) {
 };
 
 $execute {
-	#ifdef GEODE_IS_WINDOWS
+	#ifndef GEODE_IS_MACOS
 	using namespace keybinds;
 
 	//speeds
