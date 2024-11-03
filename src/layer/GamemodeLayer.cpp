@@ -206,28 +206,28 @@ void GamemodeLayer::updateButtons(PlayerObject* player1) {
 
     PlayerObjectExt* playerExt1 = static_cast<PlayerObjectExt*>(player1);
 
-    if(!isCube(player1)) m_cubeBtn->toggle(isCube(playerExt1));
-    if(!player1->m_isShip) m_shipBtn->toggle(playerExt1->m_isShip);
-    if(!player1->m_isBall) m_ballBtn->toggle(playerExt1->m_isBall);
-    if(!player1->m_isBird) m_birdBtn->toggle(playerExt1->m_isBird);
-    if(!player1->m_isDart) m_dartBtn->toggle(playerExt1->m_isDart);
-    if(!player1->m_isRobot) m_robotBtn->toggle(playerExt1->m_isRobot);
-    if(!player1->m_isSpider) m_spiderBtn->toggle(playerExt1->m_isSpider);
-    if(!player1->m_isSwing) m_swingBtn->toggle(playerExt1->m_isSwing);
+    if(!player1->isInNormalMode()) m_cubeBtn->toggle(false);
+    if(!player1->m_isShip) m_shipBtn->toggle(false);
+    if(!player1->m_isBall) m_ballBtn->toggle(false);
+    if(!player1->m_isBird) m_birdBtn->toggle(false);
+    if(!player1->m_isDart) m_dartBtn->toggle(false);
+    if(!player1->m_isRobot) m_robotBtn->toggle(false);
+    if(!player1->m_isSpider) m_spiderBtn->toggle(false);
+    if(!player1->m_isSwing) m_swingBtn->toggle(false);
 
-    if(!playerExt1->isSpeed(GJPlayerSpeed::Half)) m_halfBtn->toggle(playerExt1->isSpeed(GJPlayerSpeed::Half));
-    if(!playerExt1->isSpeed(GJPlayerSpeed::Default)) m_normalBtn->toggle(playerExt1->isSpeed(GJPlayerSpeed::Default));
-    if(!playerExt1->isSpeed(GJPlayerSpeed::Double)) m_doubleBtn->toggle(playerExt1->isSpeed(GJPlayerSpeed::Double));
-    if(!playerExt1->isSpeed(GJPlayerSpeed::Three)) m_threeBtn->toggle(playerExt1->isSpeed(GJPlayerSpeed::Three));
-    if(!playerExt1->isSpeed(GJPlayerSpeed::Four)) m_fourBtn->toggle(playerExt1->isSpeed(GJPlayerSpeed::Four));
-    if(!playerExt1->m_flipped) m_flipBtn->toggle(playerExt1->m_fields->m_flipped);
+    if(!playerExt1->isSpeed(GJPlayerSpeed::Half)) m_halfBtn->toggle(false);
+    if(!playerExt1->isSpeed(GJPlayerSpeed::Default)) m_normalBtn->toggle(false);
+    if(!playerExt1->isSpeed(GJPlayerSpeed::Double)) m_doubleBtn->toggle(false);
+    if(!playerExt1->isSpeed(GJPlayerSpeed::Three)) m_threeBtn->toggle(false);
+    if(!playerExt1->isSpeed(GJPlayerSpeed::Four)) m_fourBtn->toggle(false);
+    if(!playerExt1->m_fields->m_flipped) m_flipBtn->toggle(false);
 }
 
 void GamemodeLayer::beginButtons(PlayerObject* player1) {
 
     PlayerObjectExt* playerExt1 = static_cast<PlayerObjectExt*>(player1);
 
-    m_cubeBtn->toggle(isCube(playerExt1));
+    m_cubeBtn->toggle(playerExt1->isInNormalMode());
     m_shipBtn->toggle(playerExt1->m_isShip);
     m_ballBtn->toggle(playerExt1->m_isBall);
     m_birdBtn->toggle(playerExt1->m_isBird);
