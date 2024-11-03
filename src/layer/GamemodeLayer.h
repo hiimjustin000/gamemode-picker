@@ -46,9 +46,11 @@ enum class GJPlayerSpeed {
 
 class $modify(PlayerObjectExt, PlayerObject) {
 
-	bool m_scale = false;
-    bool m_flipped = false;
-    GJPlayerSpeed m_speed = GJPlayerSpeed::Default;
+	struct Fields {
+		bool m_scale = false;
+		bool m_flipped = false;
+		GJPlayerSpeed m_speed = GJPlayerSpeed::Default;
+	};
 
 	void togglePlayerScale(bool scale, bool unk) {
         // log::info("{}", scale);
